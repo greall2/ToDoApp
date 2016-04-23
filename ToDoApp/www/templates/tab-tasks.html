@@ -1,27 +1,36 @@
 <ion-view  view-title="My ToDo List">
+   
   <ion-content class="padding">
+      
+    <div class="bar bar-header bar-balanced">
+  <h1 class="title">Todays Date: {{currDate | date: 'dd-MM-yyyy'}}</h1>
+</div>
       <br>
       <!--Card list of tasks user saves-->
       <div class="card">
           <div class="item item-test-wrap">
           <!-- output of task entered in AddTask tab to the ToDo list is task Tab -->
           <ion-item ng-repeat="task in info.tasks">
-            <h3>{{ task.title }}</h3>
+              <h2><b><i>{{ task.title }}</i></b></h2>
             <h6>{{ task.added | date: 'dd-MM-yyyy HH:mm' }} 
                 
                 <!--delete task button-->
-            <button class="button button-small button-assertive ion-ios-trash" ng-click="remove(task)" >
+            <button style="float: right" class="button button-small button-assertive ion-ios-trash " ng-click="remove(task)"  >
                 Delete 
-                </button>  
+                </button> 
               </h6>  
-              
+            
               <!-- toggle button to highlight completed task to user -->
-            <ion-toggle ng-model="showStatus">
-             <br>
+               <!--source: http://stackoverflow.com/questions/29280945/how-can-i-place-text-inside-an-ion-toggle -->
+            <ion-toggle ng-model="status">
+             
+                <h3> <b>  Completed: </b> {{status || false}} </h3>
+                
             </ion-toggle> 
-          </ion-item>
+              
+          </ion-item >
           </div>
-      </div>
+      </div>  
       
-  </ion-content>
+  </ ion-content>
 </ion-view>

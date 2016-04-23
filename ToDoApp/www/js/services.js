@@ -1,7 +1,6 @@
 angular.module('starter.services', [])
 
 .factory('Task', function() {
-  
   var info = {
     tasks: [
       {title: "Do Shopping", added: new Date()}

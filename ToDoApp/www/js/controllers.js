@@ -1,6 +1,10 @@
 angular.module('starter.controllers', [])
 
 .controller('tasksCtrl', function($scope, Task) {
+    
+    /*tutorialsplane.com/ionic-get-device-current-date-time/ */
+$scope.currDate = new Date();
+    
     $scope.info = Task.info;
     
     //deleteing a task function
