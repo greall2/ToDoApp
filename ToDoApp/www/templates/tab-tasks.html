@@ -1,0 +1,27 @@
+<ion-view  view-title="My ToDo List">
+  <ion-content class="padding">
+      <br>
+      <!--Card list of tasks user saves-->
+      <div class="card">
+          <div class="item item-test-wrap">
+          <!-- output of task entered in AddTask tab to the ToDo list is task Tab -->
+          <ion-item ng-repeat="task in info.tasks">
+            <h3>{{ task.title }}</h3>
+            <h6>{{ task.added | date: 'dd-MM-yyyy HH:mm' }} 
+                
+                <!--delete task button-->
+            <button class="button button-small button-assertive ion-ios-trash" ng-click="remove(task)" >
+                Delete 
+                </button>  
+              </h6>  
+              
+              <!-- toggle button to highlight completed task to user -->
+            <ion-toggle ng-model="showStatus">
+             <br>
+            </ion-toggle> 
+          </ion-item>
+          </div>
+      </div>
+      
+  </ion-content>
+</ion-view>
